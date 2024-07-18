@@ -23,7 +23,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@PostMapping(value="/create1",produces = {"application/json"},consumes = {"application/json"})
+	@PostMapping(value="/createuser",produces = {"application/json"},consumes = {"application/json"})
 	public User createUser(@RequestBody User user) {
 		log.info("UserController :: createUser {} ",user);
 		return userService.createUser(user);
