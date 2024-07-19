@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.javaexpress</groupId>
-	<artifactId>aws-cicd</artifactId>
+	<artifactId>jenkins-cicd</artifactId>
 	<version>1.0.0</version>
-	<name>aws-cicd</name>
+	<name>jenkins-cicd</name>
 	<description>Demo project for Spring Boot</description>
 	<url />
 	<licenses>

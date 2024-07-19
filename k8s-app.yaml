@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: user-dev
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-deployment
+  namespace: user-dev
+spec:
+  selector:
+    matchLabels:
+      app: spring-boot-k8s
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: spring-boot-k8s
+    spec:
+      containers:
+        - name: user-service-container
+          image: 'user-service:latest'
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8085
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: userapp-service
+  namespace: user-dev
+spec:
+  selector:
+    app: spring-boot-k8s
+  ports:
+    - protocol: TCP
+      port: 8086
+      targetPort: 8085
+  type: NodePort
