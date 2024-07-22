@@ -3,10 +3,11 @@ POD Commands
 
 Interactive Mode
 -----------------
-kubectl run --name userservice-pod --image=javaexpress/userservice:latest --port=8085
+kubectl run userservice-pod --image=javaexpress/userservice:latest --port=8085
 
-Declare Pod using YAML
------------------------
+
+Declare Pod using Manifest YAML
+-------------------------------
 # To all get all pods which are created
 $ kubectl get pods
 
