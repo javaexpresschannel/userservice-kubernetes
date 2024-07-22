@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: user-dev
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userservice-deployment
+  namespace: user-dev
+spec:
+  selector:
+    matchLabels:
+      app: userservice-pod
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: userservice-pod
+    spec:
+      containers:
+        - name: user-service-container
+          image: javaexpress/userservice:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8085
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: userservice-service
+spec:
+  selector:
+    app: userservice-pod
+  ports:
+    - protocol: TCP
+      port: 8085
+      targetPort: 8085
+  type: LoadBalancer
+---

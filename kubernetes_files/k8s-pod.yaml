@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: userservice-pod
+  labels :
+    app: userservice-pod
+spec:
+  containers:
+    - name: userservice-pod-container
+      image: javaexpress/userservice:latest
+      ports:
+        - containerPort: 8085

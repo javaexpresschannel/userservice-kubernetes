@@ -1,0 +1,5 @@
+com\javaexpress\controller\UserController.class
+com\javaexpress\service\UserService.class
+com\javaexpress\Application.class
+com\javaexpress\entities\User.class
+com\javaexpress\repository\UserRepository.class

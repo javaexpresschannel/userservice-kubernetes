@@ -1,0 +1,103 @@
+POD Commands
+------------
+
+Interactive Mode
+-----------------
+kubectl run --name userservice-pod --image=javaexpress/userservice:latest --port=8085
+
+Declare Pod using YAML
+-----------------------
+# To all get all pods which are created
+$ kubectl get pods
+
+# To create pod using pod manifest yml
+$ kubectl apply -f k8s-pod.yaml
+
+# Checking pod creation status
+$ kubectl get pods
+
+# To describe the pod information
+$ kubectl describe pod <pod-name>
+
+# To get pod logs
+$ kubectl logs <pod-name>
+
+# To check in which node pod is running
+$ kubectl get pods -o wide
+
+kubectl delete pod userservice-pod
+kubectl delete all --all
+
+----------------
+Service Commands
+----------------
+kubectl expose pod userservice-pod --port=8087 --target-port=8085 --name=userservice-service --type=LoadBalancer
+
+$ kubectl get svc
+$ kubectl apply -f <service-manifest-yml>
+$ kubectl get svc
+$ kubectl describe svc <service-name>
+$ kubectl delete svc <service-name>
+kubectl delete all --all
+
+Combine POD and Service
+------------------------
+$ kubectl apply -f k8s-pod-service.yaml
+
+NameSpace Commands
+----------------
+kubectl create ns javaexpress-dev
+kubectl get ns
+kubectl get all
+kubectl get all -n kube-system
+kubectl get pods --all-namespaces
+kubectl get pods -n kube-system
+kubectl get pods -n javaexpress-dev
+
+kubectl delete ns user-dev
+kubectl delete all --all
+
+Replica Set
+-----------
+kubectl apply -f K8s-replica-pod-service.yaml
+kubectl get rs
+kubectl get pods
+kubectl get pods -o wide
+kubectl delete pod <pod-name>
+kubectl scale rs <rs-name> --replicas <count>
+Ex: $ kubectl scale rs userservice-rs --replicas 3
+$ kubectl get pods -o wide
+kubectl edit rs userservice-rs
+
+Deployment Commands
+-------------------
+$ kubectl get deployment  -n user-dev
+$ kubectl apply -f <deployment-manifest-yml>
+$ kubectl get deployment  -n user-dev
+$ kubectl get pods  -n user-dev
+$ kubectl get svc  -n user-dev
+$ kubectl scale deployment userservice-deployment --replicas 3  -n user-dev
+$ kubectl logs <podname>  -n user-dev
+$ kubectl delete deployment userservice-deployment  -n user-dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

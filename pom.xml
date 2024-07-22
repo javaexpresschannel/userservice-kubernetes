@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.javaexpress</groupId>
-	<artifactId>jenkins-cicd</artifactId>
+	<artifactId>userservice-kubernetes</artifactId>
 	<version>1.0.0</version>
-	<name>jenkins-cicd</name>
+	<name>userservice-kubernetes</name>
 	<description>Demo project for Spring Boot</description>
 	<url />
 	<licenses>
