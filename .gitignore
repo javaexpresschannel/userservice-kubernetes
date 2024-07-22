@@ -1,0 +1,69 @@
+# Maven specific
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Eclipse specific
+.metadata/
+*.log
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.project
+.classpath
+
+# IntelliJ IDEA specific
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# OS specific
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux
+*~
+
+# Other IDEs and Tools
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# General IDE/project-specific files
+*.log
+*.tmp
+*.bak
+*.swp
+*~.nib
+
+# Git specific
+*.orig
+*.rej
+*.bak
+*~.nib
+
+# Ignore node_modules (if using Node.js)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
