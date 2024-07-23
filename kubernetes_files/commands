@@ -44,6 +44,8 @@ kubectl delete all --all
 Combine POD and Service
 ------------------------
 $ kubectl apply -f k8s-pod-service.yaml
+kubectl get all
+kubectl delete all --all
 
 NameSpace Commands
 ----------------
@@ -52,6 +54,7 @@ kubectl get ns
 kubectl get all
 kubectl get all -n kube-system
 kubectl get pods --all-namespaces
+kubectl get all --all-namespaces
 kubectl get pods -n kube-system
 kubectl get pods -n javaexpress-dev
 
@@ -82,6 +85,9 @@ $ kubectl logs <podname>  -n user-dev
 $ kubectl delete deployment userservice-deployment  -n user-dev
 
 
+kubectl rollout history deploy userservice-deployment
+kubectl rollout status deploy userservice-deployment
+kubectl rollout undo deploy userservice-deployment --to-revision=1
 
 
 

@@ -1,21 +1,23 @@
 ---
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: userservice-rs
+  name: userservice-deployment
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: userservice-pod
+  replicas: 2
   template:
     metadata:
+      name: userservice-pod
       labels:
         app: userservice-pod
     spec:
       containers:
-        - name: userservice-container
-          image: javaexpress/userservice:latest
+        - name: user-service-container
+          image: 'javaexpress/userservice:1.0.0'
+          imagePullPolicy: Always
           ports:
             - containerPort: 8085
 ---
@@ -28,6 +30,7 @@ spec:
   selector:
     app: userservice-pod
   ports:
-    - port: 8085 # any port number you can define
+    - protocol: TCP
+      port: 8085
       targetPort: 8085
-...
+---

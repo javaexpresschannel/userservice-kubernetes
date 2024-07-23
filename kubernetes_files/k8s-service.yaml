@@ -7,6 +7,6 @@ spec:
     app: userservice-pod
   ports:
     - protocol: TCP
-      port: 8085
+      port: 9090 #outside world
       targetPort: 8085
-  type: LoadBalancer
+  type: NodePort
